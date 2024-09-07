@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="te">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vinayaka Chavithi Wishes</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #f5f5f5 0%, #e1e1e1 100%);
+            margin: 0;
+            padding: 0;
+            color: #333;
+            text-align: center;
+            overflow-x: hidden;
+        }
+
+        header {
+            background: linear-gradient(135deg, #ff6f00 0%, #ffab00 100%);
+            padding: 20px;
+            color: white;
+            font-size: 2rem;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+            border-bottom: 4px solid #ffab00;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-family: 'NTR', sans-serif;
+            margin: 0;
+        }
+
+        .vinayaka-section {
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            max-width: 90%;
+            text-align: center;
+        }
+
+        #vinayakaImage img {
+            width: 100%;
+            max-width: 700px;
+            height: auto;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .playing {
+            box-shadow: 0 0 20px 10px rgba(255, 165, 0, 0.8);
+            transform: scale(1.05);
+        }
+
+        .wishes-section {
+            background: linear-gradient(135deg, #ffeb3b 0%, #fdd835 100%);
+            padding: 30px;
+            font-size: 1.5rem;
+            border-top: 4px solid #ff6f00;
+            border-bottom: 4px solid #ff6f00;
+            margin: 20px auto;
+            max-width: 90%;
+            border-radius: 12px;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .tradition-section {
+            padding: 30px;
+            background: white;
+            border-radius: 12px;
+            margin: 20px auto;
+            max-width: 90%;
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+            text-align: center;
+        }
+
+        .tradition-section h2 {
+            font-family: 'NTR', sans-serif;
+            color: #ff6f00;
+            margin: 0;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #ff6f00;
+        }
+
+        .audio-player {
+            margin: 20px auto;
+            padding: 10px;
+            max-width: 300px;
+            text-align: center;
+        }
+
+        .audio-button {
+            background-color: #ff6f00;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1rem;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .audio-button:hover {
+            background-color: #e65100;
+        }
+
+        @media screen and (max-width: 768px) {
+            header {
+                font-size: 1.5rem;
+                padding: 15px;
+            }
+
+            .wishes-section,
+            .tradition-section {
+                font-size: 1.2rem;
+                padding: 20px;
+            }
+        }
+
+        @media screen and (max-width: 480px) {
+            header {
+                font-size: 1.2rem;
+                padding: 10px;
+            }
+
+            #vinayakaImage img {
+                width: 90%;
+            }
+
+            .wishes-section,
+            .tradition-section {
+                font-size: 1rem;
+                padding: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>వినాయక చవితి శుభాకాంక్షలు</h1>
+    </header>
+
+    <section class="vinayaka-section">
+        <div id="vinayakaImage">
+            <img id="vinayakaImageEffect" src="https://4kwallpapers.com/images/walls/thumbs_3t/266.jpg" alt="Vinayaka">
+        </div>
+
+        <div class="audio-player">
+            <audio id="vinayakaAudio" src="https://dl.prokerala.com/downloads/ringtones/files/dl/mp3/cutted-001-1636.mp3"></audio>
+            <button class="audio-button" id="audioControl" onclick="toggleAudio()">Play</button>
+        </div>
+    </section>
+
+    <section class="wishes-section">
+        <p>ఈ వినాయక చవితి మీకు మరియు మీ కుటుంబానికి శాంతి, సంతోషం మరియు శుభాల నింపిన పండుగ కావాలని ఆశిస్తున్నాము!</p>
+        <p>వినాయకుడి ఆశీస్సులు మీతో ఎల్లప్పుడూ ఉంటాయి!</p>
+    </section>
+
+    <section class="tradition-section">
+        <h2>వినాయక చవితి యొక్క ప్రాముఖ్యత</h2>
+        <p>వినాయక చవితి తెలుగులో ఒక ముఖ్యమైన పండుగ. వినాయకుడు విజయం, శుభారంభం మరియు ప్రగతిని సూచిస్తాడు.</p>
+    </section>
+
+    <script>
+        var audio = document.getElementById('vinayakaAudio');
+        var audioControlButton = document.getElementById('audioControl');
+        var imageEffect = document.getElementById('vinayakaImageEffect');
+
+        function toggleAudio() {
+            if (audio.paused) {
+                audio.play();
+                audioControlButton.innerText = 'Pause';
+                imageEffect.classList.add('playing');
+            } else {
+                audio.pause();
+                audioControlButton.innerText = 'Play';
+                imageEffect.classList.remove('playing');
+            }
+        }
+    </script>
+
+</body>
+</html>
